@@ -2,7 +2,9 @@ import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-nati
 import React, { Fragment } from 'react'
 
 
-export default function QuotationList() {
+export default function QuotationList(props) {
+  const daysQuery = props.filterDay
+
   return (
     <Fragment>
       <View style={styles.filters}>
@@ -22,9 +24,6 @@ export default function QuotationList() {
           <Text style={styles.textButtonQuery}>6M</Text>
         </TouchableOpacity>
       </View>
-      <ScrollView>
-
-      </ScrollView>
     </Fragment>
   )
 }
@@ -35,6 +34,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingVertical: 15,
     justifyContent: "space-evenly",
+
   },
 
   buttonQuery: {
